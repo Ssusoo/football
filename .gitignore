@@ -1,10 +1,12 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-.kotlin
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+extras/docker/mysql/db/mysql/data
 
-### Eclipse ###
+### STS ###
 .apt_generated
 .classpath
 .factorypath
@@ -16,6 +18,15 @@ bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -26,5 +37,5 @@ bin/
 ### VS Code ###
 .vscode/
 
-### Mac OS ###
-.DS_Store
+### codex ###
+AGENTS.md

@@ -1,5 +1,9 @@
-package com.football.api;
+package com.football.api.global.feign.application;
 
+import com.football.api.domains.league.dto.LeagueInfo;
+import com.football.api.global.feign.dto.TheSportsDbLeagueResponse;
+import com.football.api.global.config.exception.ExternalApiUnavailableException;
+import com.football.api.global.feign.dto.LeagueDto;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

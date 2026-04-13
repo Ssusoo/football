@@ -1,5 +1,6 @@
-package com.football.api;
+package com.football.api.global.feign.application;
 
+import com.football.api.global.feign.dto.TheSportsDbLeagueResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

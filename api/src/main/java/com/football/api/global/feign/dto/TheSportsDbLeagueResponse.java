@@ -1,4 +1,4 @@
-package com.football.api;
+package com.football.api.global.feign.dto;
 
 import java.util.List;
 

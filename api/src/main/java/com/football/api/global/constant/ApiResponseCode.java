@@ -1,4 +1,4 @@
-package com.football.api;
+package com.football.api.global.constant;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;

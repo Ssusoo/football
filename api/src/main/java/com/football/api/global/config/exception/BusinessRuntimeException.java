@@ -1,5 +1,6 @@
-package com.football.api;
+package com.football.api.global.config.exception;
 
+import com.football.api.global.constant.ApiResponseCode;
 import lombok.Getter;
 
 public class BusinessRuntimeException extends RuntimeException {
