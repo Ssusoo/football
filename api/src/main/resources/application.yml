@@ -5,4 +5,4 @@ spring:
 external-api:
   the-sports-db:
     host: https://www.thesportsdb.com/api/v1/json/123
-    korean-league-path: /lookupleague.php?id=4689
+    korean-league-path: /lookupleague.php

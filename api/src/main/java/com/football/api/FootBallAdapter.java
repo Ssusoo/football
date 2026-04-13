@@ -6,8 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 
-import java.io.IOException;
-
 @Validated
 @Component
 @RequiredArgsConstructor
@@ -15,9 +13,9 @@ import java.io.IOException;
 public class FootBallAdapter {
     private final FootballClient footballClient;
 
-    public LeagueInfo getKoreanLeagueTeams() throws ExternalApiUnavailableException {
+    public LeagueInfo getLeague(String leagueId) throws ExternalApiUnavailableException {
         try {
-            TheSportsDbLeagueResponse response = footballClient.getKoreanLeague();
+            TheSportsDbLeagueResponse response = footballClient.getKoreanLeague(leagueId);
 
             if (response == null) {
                 throw new ExternalApiUnavailableException("사이트에서 존재하지 않는 요청입니다.");
