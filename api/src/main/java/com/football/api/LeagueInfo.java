@@ -1,0 +1,13 @@
+package com.football.api;
+
+public record LeagueInfo(
+        String leagueId,
+        String leagueName,
+        String leagueAlternateName,
+        String currentSeason,
+        String country,
+        String website,
+        String badge,
+        String logo
+) {
+}

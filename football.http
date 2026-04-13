@@ -1,0 +1,2 @@
+GET http://localhost:8080/football/korean-league
+Content-Type: application/json
