@@ -1,4 +1,4 @@
-package com.football.api.domains.league.dto;
+package com.football.api.dto;
 
 public record LeagueInfo(
         String leagueId,

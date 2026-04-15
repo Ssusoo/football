@@ -39,3 +39,6 @@ out/
 
 ### codex ###
 AGENTS.md
+
+BOOT-INF/*
+src/main/resources/static/docs

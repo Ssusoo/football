@@ -1,6 +1,6 @@
 package com.football.api.global.feign.application;
 
-import com.football.api.domains.league.dto.LeagueInfo;
+import com.football.api.dto.LeagueInfo;
 import com.football.api.global.feign.dto.TheSportsDbLeagueResponse;
 import com.football.api.global.config.exception.ExternalApiUnavailableException;
 import com.football.api.global.feign.dto.LeagueDto;
@@ -14,14 +14,14 @@ import org.springframework.validation.annotation.Validated;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class FootBallAdapter {
-    private final FootballClient footballClient;
+public class TheSportsDbAdapter {
+    private final TheSportsDbClient theSportsDbClient;
 
-    public LeagueInfo getLeague(String leagueId) throws ExternalApiUnavailableException {
+    public LeagueInfo sync(String leagueId) throws ExternalApiUnavailableException {
         try {
-            TheSportsDbLeagueResponse response = footballClient.getKoreanLeague(leagueId);
+            TheSportsDbLeagueResponse response = theSportsDbClient.getKoreanLeague(leagueId);
 
-            if (response == null) {
+            if (response == null || response.leagues() == null || response.leagues().isEmpty()) {
                 throw new ExternalApiUnavailableException("사이트에서 존재하지 않는 요청입니다.");
             }
 
@@ -38,7 +38,7 @@ public class FootBallAdapter {
                     league.strLogo()
             );
         } catch (FeignException e) {
-            log.error("FootBallAdapter", e);
+            log.error("TheSportsDbAdapter", e);
             throw new ExternalApiUnavailableException(e.getMessage());
         }
     }
