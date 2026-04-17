@@ -1,5 +1,6 @@
 package com.football.core.test;
 
+import com.football.core.repository.LeagueRepository;
 import com.football.core.test.config.JpaTestConfig;
 import com.football.core.test.config.TestConfig;
 import com.football.core.test.config.TestProfile;
@@ -16,14 +17,11 @@ import org.springframework.test.context.ActiveProfiles;
 @DataJpaTest
 @ActiveProfiles(TestProfile.TEST)
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@Import({TestConfig.class, JpaTestConfig.class})
+@Import({TestConfig.class, JpaTestConfig.class, LeagueRepository.class})
 public abstract class RepositoryTest {
     @Autowired
     private DatabaseCleaner databaseCleaner;
 
     @Autowired
     private EntityManager entityManager;
-
-    protected void setup() {
-    }
 }

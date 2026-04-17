@@ -13,12 +13,12 @@ public class JpaTestConfig {
     private EntityManager entityManager;
 
     @Bean
-    public DatabaseCleaner databaseCleaner() {
-        return new DatabaseCleaner();
+    public JPAQueryFactory jpaQueryFactory() {
+        return new JPAQueryFactory(entityManager);
     }
 
     @Bean
-    public JPAQueryFactory jpaQueryFactory() {
-        return new JPAQueryFactory(entityManager);
+    public DatabaseCleaner databaseCleaner() {
+        return new DatabaseCleaner();
     }
 }
